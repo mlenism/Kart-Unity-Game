@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Moves the object
         transform.Translate(new Vector3(0.0f, 0.0f, vertical) * Time.deltaTime * positionSpeed);
-        transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * Time.deltaTime * rotationSpeed);
+        if (vertical != 0)
+        {
+            transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * Time.deltaTime * rotationSpeed); 
+        }
     }
 }
